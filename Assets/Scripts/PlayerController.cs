@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    Gun[] guns;
+    
 
     [SerializeField]
     float moveSpeed = 6;
@@ -15,11 +15,11 @@ public class PlayerController : MonoBehaviour
     bool moveLeft;
     bool moveRight;
 
-    bool shoot;
+    
     // Start is called before the first frame update
     void Start()
     {
-        guns = transform.GetComponentsInChildren<Gun>();
+        
     }
 
     // Update is called once per frame
@@ -30,13 +30,7 @@ public class PlayerController : MonoBehaviour
         moveDown = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
         moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
 
-        shoot = Input.GetKeyDown(KeyCode.Space);
-        if (shoot)
-        {
-            foreach(Gun gun in guns)
-            {
-                gun.Shoot();
-            }
+        
         }
     }
     private void FixedUpdate()
