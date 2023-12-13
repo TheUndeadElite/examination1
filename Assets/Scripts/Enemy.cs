@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+    
 
     public void TakeDamage(int damage)
     {
