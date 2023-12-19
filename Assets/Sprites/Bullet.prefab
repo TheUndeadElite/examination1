@@ -195,3 +195,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  damage: 10
+  CurrentPlayerData: {fileID: 11400000, guid: 575f4e605f4ce62489ac9a80afd162c8, type: 2}

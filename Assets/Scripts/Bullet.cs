@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public int damage = 10;
 
     private Rigidbody2D rb;
-
+    public PlayerData CurrentPlayerData = null;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            CurrentPlayerData.AddPoints(10);
             Destroy(gameObject); // Destroy the bullet after hitting an enemy
         }
     }
