@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         moveUp = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
@@ -44,9 +46,16 @@ public class PlayerController : MonoBehaviour
         HPText.text = CurrentPlayerData.HP + " HP";
         PointText.text = CurrentPlayerData.Points.ToString() + " Points";
 
-        
+        // Check if HP is zero or less
+        if (CurrentPlayerData.HP <= 0)
+        {
+            // Optionally, you can still save data if needed
+            // PlayerPrefs.SetString("LastLevelName", SceneManager.GetActiveScene().name);
+            // FindObjectOfType<SceneLoader>().SaveLastLevelIndex(SceneManager.GetActiveScene().buildIndex);
 
-
+            // Load the death scene
+            SceneManager.LoadScene(1);
+        }
     }
 
     private void FixedUpdate()

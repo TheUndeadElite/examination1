@@ -7,8 +7,16 @@ public class SceneLoader : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
+
+    public void ContinueFromLastLevel()
+    {
+        // Instead of loading the last level, load the main menu
+        SceneManager.LoadScene(0); // Assuming the main menu is at build index 0
+    }
+
+
 
     public void QuitGame()
     {
