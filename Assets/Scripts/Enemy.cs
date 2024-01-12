@@ -104,6 +104,8 @@ public class Enemy : MonoBehaviour
     // Handle collision with the player
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collision Detected"); // Add this line for debugging
+
         PlayerController playerComp = collision.gameObject.GetComponent<PlayerController>();
         if (playerComp != null)
         {

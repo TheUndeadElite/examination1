@@ -19,14 +19,18 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the bullet collided with the player
         PlayerController player = other.GetComponent<PlayerController>();
+        PlayerBlocking playerBlocking = other.GetComponentInChildren<PlayerBlocking>();
 
-        // If the collided object is the player, deal damage to the player
-        if (player != null)
+        // If the collided object is the player and the shield is not active, deal damage to the player
+        if (player != null && playerBlocking != null)
         {
-            player.TakeDamage(damage);
-            Destroy(gameObject); // Destroy the bullet after hitting the player
+            if(!playerBlocking.IsShieldActive())
+            {
+                player.TakeDamage(damage);
+                Destroy(gameObject); // Destroy the bullet after hitting the player
+            }
+           
         }
     }
 }

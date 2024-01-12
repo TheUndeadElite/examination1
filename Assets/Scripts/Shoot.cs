@@ -12,7 +12,7 @@ public class Shoot : MonoBehaviour
     void Update()
         
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame || Input.GetKey(KeyCode.Z))
         {
             Destroy(Instantiate(BulletPrefab, ShootingPoint.position, transform.rotation), 3f);
         }

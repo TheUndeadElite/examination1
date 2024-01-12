@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
         if (enemy != null)
         {
             // Deal damage to the player
-            TakeDamage(5);
+            TakeDamage(15);
 
             // Destroy the enemy
             Destroy(enemy.gameObject);
